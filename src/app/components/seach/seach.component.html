@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col">
+        <input #buscador (keyup)="buscar(buscador.value)" type="text" class="form-control" name="" id="" aria-describedby="helpId"
+            placeholder="Buscar Artista..">
+    </div>
+</div>
+
+
+<app-loading *ngIf="loading"></app-loading>
+<app-tarjetas *ngIf="!loading" [items]="songs"></app-tarjetas>
+<!-- <div *ngIf="!loading" class="card-columns m-5">
+    <div *ngFor="let single of songs" class="card">
+        <img [src]="single.images | noimage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ single.name }}</h5>
+            <p class="card-text">
+                <a *ngFor="let artista of single.artists; let i=index" class="badge badge-pill badge-success">
+                    {{artista.name}}
+                </a>
+            </p>
+        </div>
+    </div>
+</div> -->
